@@ -1,0 +1,27 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": ["prettier"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": ["react","import"],
+    "rules": {
+      "strict": 0,
+      "indent": ["error", 4],
+      "semi": ["error", "never"],
+      "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+      "import/named": 2,
+      "import/namespace": 2,
+      "import/default": 2,
+      "import/export": 2
+    }
+  }
