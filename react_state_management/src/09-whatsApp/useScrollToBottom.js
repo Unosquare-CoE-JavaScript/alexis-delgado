@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { useChat } from './useChat'
 
 export const useScrollToBottom = (messages) => {
     let scrollContainer = useRef()
+    let { state } = useChat()
 
     useEffect(() => {
         if (!scrollContainer?.current) return
@@ -10,7 +12,7 @@ export const useScrollToBottom = (messages) => {
             0,
             scrollContainer.current.scrollHeight
         )
-    }, [messages])
+    }, [state.messages])
 
     return scrollContainer
 }

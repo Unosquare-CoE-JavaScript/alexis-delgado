@@ -3,12 +3,13 @@ import { Message } from './Message'
 import { Input } from './Input'
 import { useFakeConvo } from './useFakeConvo'
 import { useScrollToBottom } from './useScrollToBottom'
-import { useChatReducer } from './chatReducer'
-export const App = () => {
-    let [state, dispatch] = useChatReducer()
+import { useChat, ChatProvider } from './useChat'
 
-    useFakeConvo(dispatch)
-    let scrollRef = useScrollToBottom(state.messages)
+export const App = () => {
+    let { state } = useChat()
+
+    useFakeConvo()
+    let scrollRef = useScrollToBottom()
 
     return (
         <div style={styles.wrapper}>
@@ -20,16 +21,16 @@ export const App = () => {
                     <Message key={message.id} message={message} />
                 ))}
             </div>
-            <Input
-                value={state.currentMessage}
-                onChange={(message) =>
-                    dispatch({ type: 'setCurrentMessage', message })
-                }
-                onEnter={(message) => dispatch({ type: 'addMessage', message })}
-            />
+            <Input />
         </div>
     )
 }
+
+export const AppContainer = () => (
+    <ChatProvider>
+        <App />
+    </ChatProvider>
+)
 
 const styles = {
     wrapper: {
