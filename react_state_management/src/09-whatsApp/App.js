@@ -3,19 +3,12 @@ import { Message } from './Message'
 import { Input } from './Input'
 import { useFakeConvo } from './useFakeConvo'
 import { useScrollToBottom } from './useScrollToBottom'
-
-const initialMessages = [
-    { id: 1, content: 'Hello there!', from: 'me' },
-    { id: 2, content: 'How are you doing?', from: 'Steve' },
-    { id: 3, content: 'Pretty good!', from: 'me' },
-]
-
+import { useChatReducer } from './chatReducer'
 export const App = () => {
-    let [messages, setMessages] = useState(initialMessages)
-    let [currentMessage, setCurrentMessage] = useState('')
+    let [state, dispatch] = useChatReducer()
 
-    useFakeConvo(setMessages)
-    let scrollRef = useScrollToBottom(messages)
+    useFakeConvo(dispatch)
+    let scrollRef = useScrollToBottom(state.messages)
 
     return (
         <div style={styles.wrapper}>
@@ -23,20 +16,16 @@ export const App = () => {
                 style={styles.container}
                 ref={(ref) => (scrollRef.current = ref)}
             >
-                {messages.map((message) => (
+                {state.messages.map((message) => (
                     <Message key={message.id} message={message} />
                 ))}
             </div>
             <Input
-                value={currentMessage}
-                onChange={(content) => setCurrentMessage(content)}
-                onEnter={(content) => {
-                    setCurrentMessage('')
-                    setMessages([
-                        ...messages,
-                        { id: messages.length + 1, content, from: 'me' },
-                    ])
-                }}
+                value={state.currentMessage}
+                onChange={(message) =>
+                    dispatch({ type: 'setCurrentMessage', message })
+                }
+                onEnter={(message) => dispatch({ type: 'addMessage', message })}
             />
         </div>
     )
