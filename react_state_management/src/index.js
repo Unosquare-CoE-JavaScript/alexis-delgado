@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { AppContainer } from './10-recoil/App'
+import { App } from './11-xstate/App'
 
-ReactDOM.render(<AppContainer />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
