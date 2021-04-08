@@ -12,16 +12,27 @@ const App = () => {
   };
 
   const [personsState, setPersonsState] = useState([
-    { name: "Max", age: 28 },
-    { name: "Manu", age: 29 },
-    { name: "Stephanie", age: 26 },
+    { id: 1, name: "Max", age: 28 },
+    { id: 2, name: "Manu", age: 29 },
+    { id: 3, name: "Stephanie", age: 26 },
   ]);
 
-  const [otherState, setOtherState] = useState("some other value");
   const [shownPersons, setShownPersons] = useState(false);
 
   const togglePersonsHandler = () => {
     setShownPersons(!shownPersons);
+  };
+
+  const changeNameHandler = (event, id) => {
+    const personIndex = personsState.findIndex((person) => person.id === id);
+
+    const person = { ...personsState[personIndex] };
+
+    person.name = event.target.value;
+
+    const updatePersons = [...personsState];
+    updatePersons[personIndex] = person;
+    setPersonsState(updatePersons);
   };
 
   const deletePersonsHandler = (personIndex) => {
@@ -43,6 +54,8 @@ const App = () => {
               click={() => deletePersonsHandler(index)}
               name={person.name}
               age={person.age}
+              key={person.id}
+              changed={(event) => changeNameHandler(event, person.id)}
             />
           );
         })}
