@@ -16,13 +16,23 @@ const App = () => {
 
   console.log(personsState, otherState);
 
-  const switchNameHandler = () => {
+  const switchNameHandler = (newName) => {
     // console.log("Was clicked!");
     setPersonsState({
       persons: [
-        { name: "Maximilian", age: 28 },
+        { name: newName, age: 28 },
         { name: "Manu", age: 29 },
         { name: "Stephanie", age: 27 },
+      ],
+    });
+  };
+
+  const nameChangedHandler = (event) => {
+    setPersonsState({
+      persons: [
+        { name: "Max", age: 28 },
+        { name: event.target.value, age: 29 },
+        { name: "Stephanie", age: 26 },
       ],
     });
   };
@@ -30,7 +40,9 @@ const App = () => {
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <button onClick={switchNameHandler}>Switch name</button>
+      <button onClick={() => switchNameHandler("Maximilian")}>
+        Switch name
+      </button>
       <Person
         name={personsState.persons[0].name}
         age={personsState.persons[0].age}
@@ -38,13 +50,14 @@ const App = () => {
       <Person
         name={personsState.persons[1].name}
         age={personsState.persons[1].age}
-      />
+        changed={nameChangedHandler}
+      >
+        My Hobbies: Racing
+      </Person>
       <Person
         name={personsState.persons[2].name}
         age={personsState.persons[2].age}
-      >
-        My Hobb7ies: Racing
-      </Person>
+      />
     </div>
   );
 };
