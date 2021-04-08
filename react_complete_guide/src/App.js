@@ -21,18 +21,12 @@ const App = () => {
   });
 
   const [otherState, setOtherState] = useState("some other value");
+  const [shownPersons, setShownPersons] = useState(false);
 
   console.log(personsState, otherState);
 
-  const switchNameHandler = (newName) => {
-    // console.log("Was clicked!");
-    setPersonsState({
-      persons: [
-        { name: newName, age: 28 },
-        { name: "Manu", age: 29 },
-        { name: "Stephanie", age: 27 },
-      ],
-    });
+  const togglePersonsHandler = () => {
+    setShownPersons(!shownPersons);
   };
 
   const nameChangedHandler = (event) => {
@@ -45,27 +39,58 @@ const App = () => {
     });
   };
 
+  let persons = null;
+
+  if (shownPersons) {
+    //condicional javascript way
+    persons = (
+      <div>
+        <Person
+          name={personsState.persons[0].name}
+          age={personsState.persons[0].age}
+        />
+        <Person
+          name={personsState.persons[1].name}
+          age={personsState.persons[1].age}
+          changed={nameChangedHandler}
+        >
+          My Hobbies: Racing
+        </Person>
+        <Person
+          name={personsState.persons[2].name}
+          age={personsState.persons[2].age}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <button style={style} onClick={() => switchNameHandler("Maximilian")}>
+      <button style={style} onClick={() => togglePersonsHandler()}>
         Switch name
       </button>
-      <Person
-        name={personsState.persons[0].name}
-        age={personsState.persons[0].age}
-      />
-      <Person
-        name={personsState.persons[1].name}
-        age={personsState.persons[1].age}
-        changed={nameChangedHandler}
-      >
-        My Hobbies: Racing
-      </Person>
-      <Person
-        name={personsState.persons[2].name}
-        age={personsState.persons[2].age}
-      />
+      {persons}
+      {/* { //Conditional render
+      shownPersons ? (
+        <div>
+          <Person
+            name={personsState.persons[0].name}
+            age={personsState.persons[0].age}
+          />
+          <Person
+            name={personsState.persons[1].name}
+            age={personsState.persons[1].age}
+            changed={nameChangedHandler}
+          >
+            My Hobbies: Racing
+          </Person>
+          <Person
+            name={personsState.persons[2].name}
+            age={personsState.persons[2].age}
+          />
+        </div>
+      ) : null} */}
     </div>
   );
 };
