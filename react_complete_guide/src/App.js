@@ -11,32 +11,24 @@ const App = () => {
     cursor: "pointer",
   };
 
-  const [personsState, setPersonsState] = useState({
-    persons: [
-      { name: "Max", age: 28 },
-      { name: "Manu", age: 29 },
-      { name: "Stephanie", age: 26 },
-    ],
-    otherState: "some other value",
-  });
+  const [personsState, setPersonsState] = useState([
+    { name: "Max", age: 28 },
+    { name: "Manu", age: 29 },
+    { name: "Stephanie", age: 26 },
+  ]);
 
   const [otherState, setOtherState] = useState("some other value");
   const [shownPersons, setShownPersons] = useState(false);
-
-  console.log(personsState, otherState);
 
   const togglePersonsHandler = () => {
     setShownPersons(!shownPersons);
   };
 
-  const nameChangedHandler = (event) => {
-    setPersonsState({
-      persons: [
-        { name: "Max", age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: "Stephanie", age: 26 },
-      ],
-    });
+  const deletePersonsHandler = (personIndex) => {
+    const persons = personsState;
+    persons.splice(personIndex, 1);
+    console.log(persons);
+    setPersonsState([...persons]);
   };
 
   let persons = null;
@@ -45,7 +37,16 @@ const App = () => {
     //condicional javascript way
     persons = (
       <div>
-        <Person
+        {personsState.map((person, index) => {
+          return (
+            <Person
+              click={() => deletePersonsHandler(index)}
+              name={person.name}
+              age={person.age}
+            />
+          );
+        })}
+        {/* <Person
           name={personsState.persons[0].name}
           age={personsState.persons[0].age}
         />
@@ -59,7 +60,7 @@ const App = () => {
         <Person
           name={personsState.persons[2].name}
           age={personsState.persons[2].age}
-        />
+        /> */}
       </div>
     );
   }
@@ -67,7 +68,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <button style={style} onClick={() => togglePersonsHandler()}>
+      <button style={style} onClick={togglePersonsHandler}>
         Switch name
       </button>
       {persons}
