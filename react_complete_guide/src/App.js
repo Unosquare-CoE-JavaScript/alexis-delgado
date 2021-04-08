@@ -3,6 +3,14 @@ import "./App.css";
 import Person from "./Person/Person";
 
 const App = () => {
+  const style = {
+    backgroundColor: "white",
+    font: "inherit",
+    border: "1px solid blue",
+    padding: "8px",
+    cursor: "pointer",
+  };
+
   const [personsState, setPersonsState] = useState({
     persons: [
       { name: "Max", age: 28 },
@@ -40,7 +48,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <button onClick={() => switchNameHandler("Maximilian")}>
+      <button style={style} onClick={() => switchNameHandler("Maximilian")}>
         Switch name
       </button>
       <Person
