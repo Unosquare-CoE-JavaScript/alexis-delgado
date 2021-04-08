@@ -25,10 +25,10 @@ const App = () => {
   };
 
   const deletePersonsHandler = (personIndex) => {
-    const persons = personsState;
+    // const persons = personsState;
+    const persons = [...personsState];
     persons.splice(personIndex, 1);
-    console.log(persons);
-    setPersonsState([...persons]);
+    setPersonsState(persons);
   };
 
   let persons = null;
