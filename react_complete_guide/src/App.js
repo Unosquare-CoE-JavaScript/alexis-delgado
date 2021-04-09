@@ -1,22 +1,24 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
 import "./App.css";
-import Radium, { StyleRoot } from "radium";
 import Person from "./Person/Person";
 
-const App = () => {
-  const styles = {
-    backgroundColor: "green",
-    color: "white",
-    font: "inherit",
-    border: "1px solid blue",
-    padding: "8px",
-    cursor: "pointer",
-    ":hover": {
-      backgroundColor: "ligthgreen",
-      color: "white",
-    },
-  };
+const StyledButton = styled.button`
+  background-color: ${(props) => (props.alt ? "red" : "green")};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
 
+  &:hover {
+    background-color: ${(props) => (props.alt ? "salmon" : "lightgreen")};
+    color: white;
+  }
+`;
+
+const App = () => {
   const [personsState, setPersonsState] = useState([
     { id: 1, name: "Max", age: 28 },
     { id: 2, name: "Manu", age: 29 },
@@ -66,11 +68,6 @@ const App = () => {
         })}
       </div>
     );
-    styles.backgroundColor = "red";
-    styles[":hover"] = {
-      backgroundColor: "salmon",
-      color: "black",
-    };
   }
 
   const classes = [];
@@ -83,17 +80,15 @@ const App = () => {
   }
 
   return (
-    <StyleRoot>
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p className={classes.join(" ")}>This is really work!</p>
-        <button style={styles} onClick={togglePersonsHandler}>
-          Switch name
-        </button>
-        {persons}
-      </div>
-    </StyleRoot>
+    <div className="App">
+      <h1>Hi, I'm a React App</h1>
+      <p className={classes.join(" ")}>This is really work!</p>
+      <StyledButton alt={shownPersons} onClick={togglePersonsHandler}>
+        Switch name
+      </StyledButton>
+      {persons}
+    </div>
   );
 };
 
-export default Radium(App);
+export default App;
