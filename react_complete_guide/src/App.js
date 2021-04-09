@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Radium from "radium";
 import Person from "./Person/Person";
 
 const App = () => {
@@ -10,6 +11,10 @@ const App = () => {
     border: "1px solid blue",
     padding: "8px",
     cursor: "pointer",
+    ":hover": {
+      backgroundColor: "ligthgreen",
+      color: "white",
+    },
   };
 
   const [personsState, setPersonsState] = useState([
@@ -62,6 +67,10 @@ const App = () => {
       </div>
     );
     styles.backgroundColor = "red";
+    styles[":hover"] = {
+      backgroundColor: "salmon",
+      color: "black",
+    };
   }
 
   const classes = [];
@@ -85,4 +94,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Radium(App);
