@@ -3,8 +3,9 @@ import "./App.css";
 import Person from "./Person/Person";
 
 const App = () => {
-  const style = {
-    backgroundColor: "white",
+  const styles = {
+    backgroundColor: "green",
+    color: "white",
     font: "inherit",
     border: "1px solid blue",
     padding: "8px",
@@ -45,7 +46,6 @@ const App = () => {
   let persons = null;
 
   if (shownPersons) {
-    //condicional javascript way
     persons = (
       <div>
         {personsState.map((person, index) => {
@@ -59,52 +59,18 @@ const App = () => {
             />
           );
         })}
-        {/* <Person
-          name={personsState.persons[0].name}
-          age={personsState.persons[0].age}
-        />
-        <Person
-          name={personsState.persons[1].name}
-          age={personsState.persons[1].age}
-          changed={nameChangedHandler}
-        >
-          My Hobbies: Racing
-        </Person>
-        <Person
-          name={personsState.persons[2].name}
-          age={personsState.persons[2].age}
-        /> */}
       </div>
     );
+    styles.backgroundColor = "red";
   }
 
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <button style={style} onClick={togglePersonsHandler}>
+      <button style={styles} onClick={togglePersonsHandler}>
         Switch name
       </button>
       {persons}
-      {/* { //Conditional render
-      shownPersons ? (
-        <div>
-          <Person
-            name={personsState.persons[0].name}
-            age={personsState.persons[0].age}
-          />
-          <Person
-            name={personsState.persons[1].name}
-            age={personsState.persons[1].age}
-            changed={nameChangedHandler}
-          >
-            My Hobbies: Racing
-          </Person>
-          <Person
-            name={personsState.persons[2].name}
-            age={personsState.persons[2].age}
-          />
-        </div>
-      ) : null} */}
     </div>
   );
 };
