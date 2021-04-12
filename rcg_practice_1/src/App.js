@@ -1,7 +1,10 @@
-import "./App.css";
+import React from "react";
+import AddUser from "./components/Users/AddUser";
 
-function App() {
-  return <div></div>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <div>
+      <AddUser />
+    </div>
+  );
+};
