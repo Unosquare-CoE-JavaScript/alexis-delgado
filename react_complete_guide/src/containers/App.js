@@ -2,21 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import "./App.css";
-import Person from "./Person/Person";
-
-const StyledButton = styled.button`
-  background-color: ${(props) => (props.alt ? "red" : "green")};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${(props) => (props.alt ? "salmon" : "lightgreen")};
-    color: white;
-  }
-`;
+import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 const App = () => {
   const [personsState, setPersonsState] = useState([
@@ -54,38 +41,21 @@ const App = () => {
 
   if (shownPersons) {
     persons = (
-      <div>
-        {personsState.map((person, index) => {
-          return (
-            <Person
-              click={() => deletePersonsHandler(index)}
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              changed={(event) => changeNameHandler(event, person.id)}
-            />
-          );
-        })}
-      </div>
+      <Persons
+        persons={personsState}
+        clicked={deletePersonsHandler}
+        changed={changeNameHandler}
+      />
     );
-  }
-
-  const classes = [];
-  if (personsState.length <= 2) {
-    classes.push("red");
-  }
-
-  if (personsState.length <= 1) {
-    classes.push("bold");
   }
 
   return (
     <div className="App">
-      <h1>Hi, I'm a React App</h1>
-      <p className={classes.join(" ")}>This is really work!</p>
-      <StyledButton alt={shownPersons} onClick={togglePersonsHandler}>
-        Switch name
-      </StyledButton>
+      <Cockpit
+        shownPersons={shownPersons}
+        persons={personsState}
+        clicked={togglePersonsHandler}
+      />
       {persons}
     </div>
   );
