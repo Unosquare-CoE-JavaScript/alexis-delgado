@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import { Card } from "../UI/Card";
+import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 
-export const AddUser = () => {
+export const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnterAge] = useState("");
 
@@ -19,7 +19,7 @@ export const AddUser = () => {
       return;
     }
 
-    console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnterAge("");
   };
