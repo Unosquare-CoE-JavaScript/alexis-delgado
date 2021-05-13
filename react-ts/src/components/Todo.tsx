@@ -1,8 +1,9 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
+import classes from './Todo.module.css'
 
-const Todo: FC<{text: string}> = (props) => {
+const Todo: FC<{text: string, onRemoveTodo: (event: React.MouseEvent) => void }> = (props) => {
     return (
-        <li>{props.text}</li>
+        <li className={classes.item} onClick={props.onRemoveTodo}>{props.text}</li>
     )
 }
 
