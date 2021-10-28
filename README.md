@@ -5,22 +5,18 @@
   &nbsp;&nbsp;&nbsp;
   <img src="https://iconape.com/wp-content/png_logo_vector/typescript.png" width="40" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="40" />
-  &nbsp;&nbsp;&nbsp;
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" width="40" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://kontent.ai/img/general/cta-banner-bg.svg" width="30" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://cdn.worldvectorlogo.com/logos/gopher.svg" width="25" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1024px-React.svg.png" width="40" />
 </p>
 
 Hi there! I'm Alexis Delgado intermediate software enginner specializing in the FrontEnd at Unosquare. This repository has each course and workshop that I have taken. I'm going to continue learning and enforcing my current knowledge.
 
 ## Courses/Workshops
 
-1. **[Javascript Patterns]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/design_patterns)
-2. **[React Native]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/AwesomeProjectExpo)
-3. **[React - epicreact]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/epicreact)
-4. **[React - the complete guide]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/react-the-complete-guide)
-5. **[React - state management]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/react_state_management)
-6. **[Typescript - basics]**(https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/typescript_understanding)
+1. [**Javascript Patterns**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/design_patterns)
+2. [**React Native**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/AwesomeProjectExpo)
+3. [**React - epicreact**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/epicreact)
+4. [**React - the complete guide**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/react-the-complete-guide)
+5. [**React - state management**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/react_state_management)
+6. [**Typescript - basics**](https://github.com/Unosquare-CoE-JavaScript/alexis-delgado/tree/main/typescript_understanding)
