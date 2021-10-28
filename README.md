@@ -6,8 +6,6 @@
   <img src="https://iconape.com/wp-content/png_logo_vector/typescript.png" width="40" />
   &nbsp;&nbsp;&nbsp;
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" width="40" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1024px-React.svg.png" width="40" />
 </p>
 
 Hi there! I'm Alexis Delgado intermediate software enginner specializing in the FrontEnd at Unosquare. This repository has each course and workshop that I have taken. I'm going to continue learning and enforcing my current knowledge.
