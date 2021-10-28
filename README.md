@@ -1,6 +1,18 @@
-# Center of excellence - JavaScript
+# Center of excellence - Javascript
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png" width="40" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://iconape.com/wp-content/png_logo_vector/typescript.png" width="40" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="40" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" width="40" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://kontent.ai/img/general/cta-banner-bg.svg" width="30" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.worldvectorlogo.com/logos/gopher.svg" width="25" />
+</p>
 
 Hi there! I'm Alexis Delgado intermediate software enginner specializing in the FrontEnd at Unosquare. This repository has each course and workshop that I have taken. I'm going to continue learning and enforcing my current knowledge.
 
